@@ -31,7 +31,7 @@ $ yarn install
 ```bash
 $ yarn dev
 ```
-### 2. Access to http://localhost:3000/github-labels-export-import-web/
+### 2. Access to `http://localhost:3000/github-labels-export-import-web/`
 
 ## LICENSE
 [MIT](LICENSE)
