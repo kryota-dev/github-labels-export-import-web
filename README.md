@@ -14,6 +14,15 @@ Export the Labels of a repository on GitHub and import them into another reposit
 2. Create a Personal Access Token on GitHub
 
 ## Installation
+### 1. Check node and yarn version
+```
+$ node -v
+v16.17.1
+$ yarn -v
+1.22.19
+```
+
+### 2. Install the dependencies
 ```bash
 $ yarn install
 ```
@@ -22,7 +31,7 @@ $ yarn install
 ```bash
 $ yarn dev
 ```
-### 2. Access to http://localhost:3000
+### 2. Access to http://localhost:3000/github-labels-export-import-web/
 
 ## LICENSE
 [MIT](LICENSE)
