@@ -9,13 +9,9 @@ Export the Labels of a repository on GitHub and import them into another reposit
 2. Get all labels from the export repository
 3. Add labels retrieved from the export repository to the import repository
 
-##  Install
-```bash
-git clone git@github.com:HidakaRintaro/github-labels-export-import.git
-```
-
 ## Setup
-### Create a Personal Access Token on GitHub
+1. Clone this repository or download the zip file.
+2. Create a Personal Access Token on GitHub
 
 ## Installation
 ```bash
