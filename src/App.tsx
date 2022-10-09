@@ -132,7 +132,7 @@ export const App = () => {
 
   const onClickResultButton = () => {
     window.open(
-      `https://github.com/${exportRepoOwner}/${exportRepoName}/labels`
+      `https://github.com/${importRepoOwner}/${importRepoName}/labels`
     );
   };
 
