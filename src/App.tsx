@@ -29,6 +29,7 @@ export const App = () => {
   const [importRepoOwner, setImportRepoOwner] = useState("");
   const [importRepoName, setImportRepoName] = useState("");
   const [githubAccessToken, setGithubAccessToken] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const onChangeExportRepoOwner = (e: ChangeEvent<HTMLInputElement>) =>
     setExportRepoOwner(e.target.value);
@@ -93,6 +94,7 @@ export const App = () => {
     };
 
     const main = async () => {
+      setIsLoading(true);
       try {
         const delLabels = await getLabels(false); // インポート先の既存ラベルをエクスポート
         await deleteLabel(delLabels); // インポート先の既存ラベルを削除
@@ -115,6 +117,7 @@ export const App = () => {
           });
         }
       }
+      setIsLoading(false);
     };
 
     main();
@@ -154,6 +157,7 @@ export const App = () => {
                 type="text"
                 value={exportRepoOwner}
                 onChange={onChangeExportRepoOwner}
+                disabled={isLoading}
                 placeholder="octocat"
               />
               <FormLabel>Export repository name</FormLabel>
@@ -161,6 +165,7 @@ export const App = () => {
                 type="text"
                 value={exportRepoName}
                 onChange={onChangeExportRepoName}
+                disabled={isLoading}
                 placeholder="repo"
               />
               <FormLabel>Import repository owner</FormLabel>
@@ -168,6 +173,7 @@ export const App = () => {
                 type="text"
                 value={importRepoOwner}
                 onChange={onChangeImportRepoOwner}
+                disabled={isLoading}
                 placeholder="octopus"
               />
               <FormLabel>Import repository name</FormLabel>
@@ -175,6 +181,7 @@ export const App = () => {
                 type="text"
                 value={importRepoName}
                 onChange={onChangeImportRepoName}
+                disabled={isLoading}
                 placeholder="repo"
               />
               <FormLabel>Token</FormLabel>
@@ -182,10 +189,15 @@ export const App = () => {
                 type="password"
                 value={githubAccessToken}
                 onChange={onChangeGithubAccessToken}
+                disabled={isLoading}
                 placeholder="Your GitHub access token"
               />
             </FormControl>
-            <Button colorScheme="blue" onClick={onClickRunButton}>
+            <Button
+              colorScheme="blue"
+              onClick={onClickRunButton}
+              isLoading={isLoading}
+            >
               Run
             </Button>
           </Stack>
