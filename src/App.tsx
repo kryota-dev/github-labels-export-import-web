@@ -1,8 +1,10 @@
 import {
   Button,
+  chakra,
   Flex,
   FormControl,
   FormLabel,
+  IconButton,
   Input,
   Modal,
   ModalBody,
@@ -18,7 +20,11 @@ import {
 } from "@chakra-ui/react";
 import { Octokit } from "@octokit/rest";
 import { ChangeEvent, useState } from "react";
+import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { useToastMessage } from "./hooks/useToastMessage";
+
+const EyeIcon = chakra(BsEye);
+const EyeSlashIcon = chakra(BsEyeSlash);
 
 export const App = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -29,6 +35,7 @@ export const App = () => {
   const [importRepoOwner, setImportRepoOwner] = useState("");
   const [importRepoName, setImportRepoName] = useState("");
   const [githubAccessToken, setGithubAccessToken] = useState("");
+  const [showToken, setShowToken] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const onChangeExportRepoOwner = (e: ChangeEvent<HTMLInputElement>) =>
@@ -185,18 +192,34 @@ export const App = () => {
                 placeholder="repo"
               />
               <FormLabel>Token</FormLabel>
-              <Input
-                type="password"
-                value={githubAccessToken}
-                onChange={onChangeGithubAccessToken}
-                disabled={isLoading}
-                placeholder="Your GitHub access token"
-              />
+              <Flex>
+                <Input
+                  type={showToken ? "text" : "password"}
+                  value={githubAccessToken}
+                  onChange={onChangeGithubAccessToken}
+                  disabled={isLoading}
+                  placeholder="Your GitHub access token"
+                />
+                <IconButton
+                  aria-label="showButton"
+                  icon={showToken ? <EyeSlashIcon /> : <EyeIcon />}
+                  disabled={isLoading}
+                  onClick={() => setShowToken(!showToken)}
+                />
+              </Flex>
             </FormControl>
             <Button
               colorScheme="blue"
               onClick={onClickRunButton}
               isLoading={isLoading}
+              disabled={
+                exportRepoOwner === "" ||
+                exportRepoName === "" ||
+                importRepoOwner === "" ||
+                importRepoName === "" ||
+                githubAccessToken === "" ||
+                isLoading
+              }
             >
               Run
             </Button>
