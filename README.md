@@ -1,37 +1,26 @@
 # GitHub Labels export import
-Originally published by [github-labels-export-import](https://github.com/ryota-k0827/github-labels-export-import)
+Originally published by [HidakaRintaro/github-labels-export-import](https://github.com/HidakaRintaro/github-labels-export-import)
 
-## About
-Export the Labels of a repository on GitHub and import them into another repository.
+## 概要
+GitHubのリポジトリに登録されているラベルをエクスポートし、別のリポジトリにインポートすることができます。
 
-## Description
-1. Remove all labels from the import repository
-2. Get all labels from the export repository
-3. Add labels retrieved from the export repository to the import repository
+## 説明
+- インポート先のリポジトリに登録されているラベルは全て削除されます。
+- エクスポート元のリポジトリからラベルを取得し、インポート先のリポジトリに登録します。
+- GitHubのアクセストークンが必要です。
+  - [トークン生成はこちらから](https://github.com/settings/tokens)
+  - トークンには`repo`の権限が必要です。
+- エクスポート元、インポート先共に、プライベートリポジトリの場合はアクセス権限が必要です。
 
-## Setup
-1. Clone this repository or download the zip file.
-2. Create a Personal Access Token on GitHub
-
-## Installation
-### 1. Check node and yarn version
-```
-$ node -v
-v16.17.1
-$ yarn -v
-1.22.19
-```
-
-### 2. Install the dependencies
-```bash
-$ yarn install
-```
-## Running the app
-### 1. Start the app
-```bash
-$ yarn dev
-```
-### 2. Access to `http://localhost:3000/github-labels-export-import-web/`
+## 使い方
+1. [https://ryota-k0827.github.io/github-labels-export-import-web](https://ryota-k0827.github.io/github-labels-export-import-web)にアクセスします。
+2. エクスポート元のリポジトリオーナー名を入力します。（例: `HidakaRintaro`）
+3. エクスポート元のリポジトリ名を入力します。（例: `github-labels-export-import`）
+4. インポート先のリポジトリオーナー名を入力します。（例: `ryota-k0827`）
+5. インポート先のリポジトリ名を入力します。（例: `github-labels-export-import-web`）
+6. GitHubのアクセストークンを入力します。
+7. `Run`ボタンを押します。
+8. `Check the Result`ボタンを押すと、インポート先のリポジトリに登録されているラベルを確認できます。
 
 ## LICENSE
 [MIT](LICENSE)
