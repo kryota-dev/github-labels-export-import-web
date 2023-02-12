@@ -13,7 +13,7 @@ GitHubのリポジトリに登録されているラベルをエクスポート�
 - エクスポート元、インポート先共に、プライベートリポジトリの場合はアクセス権限が必要です。
 
 ## 使い方
-1. [https://ryota-k0827.github.io/github-labels-export-import-web](https://ryota-k0827.github.io/github-labels-export-import-web)にアクセスします。
+1. [https://github-labels-export-import-web.kryota.dev](https://github-labels-export-import-web.kryota.dev)にアクセスします。
 2. エクスポート元のリポジトリオーナー名を入力します。（例: `HidakaRintaro`）
 3. エクスポート元のリポジトリ名を入力します。（例: `github-labels-export-import`）
 4. インポート先のリポジトリオーナー名を入力します。（例: `ryota-k0827`）
