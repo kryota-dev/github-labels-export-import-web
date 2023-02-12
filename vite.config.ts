@@ -17,5 +17,5 @@ export default defineConfig({
   build: {
     outDir: "./docs",
   },
-  base: "https://ryota-k0827.github.io/github-labels-export-import-web/",
+  base: "https://github-labels-export-import-web.kryota.dev/",
 });
