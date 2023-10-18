@@ -15,7 +15,7 @@ export default defineConfig({
     port: 3000,
   },
   build: {
-    outDir: "./docs",
+    outDir: './docs',
   },
-  base: "https://github-labels-export-import-web.kryota.dev/",
-});
+  base: 'https://ryota-k0827.github.io/github-labels-export-import-web/',
+})
