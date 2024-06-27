@@ -1,6 +1,6 @@
-import { defineConfig } from "vite";
-import { nodePolyfills } from "vite-plugin-node-polyfills";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite'
+import { nodePolyfills } from 'vite-plugin-node-polyfills'
+import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,5 +17,5 @@ export default defineConfig({
   build: {
     outDir: './docs',
   },
-  base: 'https://ryota-k0827.github.io/github-labels-export-import-web/',
+  base: 'https://kryota-dev.github.io/github-labels-export-import-web/',
 })
